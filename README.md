@@ -4,4 +4,4 @@
 
 For Binder, click on the link above.
 
-For Google Colab, open the appropriate .ipynb notebook file and then there will be a link to Colab at the top.
+For Google Colab, click on the appropriate .ipynb notebook file (on the left panel, at least in my browser) and then there will be a link to Colab at the top.
