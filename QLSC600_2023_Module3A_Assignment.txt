@@ -8,7 +8,7 @@ Code that could help you is available in ecg_assignment.ipynb in the github fold
 
 	b. What is a confidence interval ? Why is it that in the simple z-test based on independent, identically-distributed samples from a Gaussian distribution, p-values below 0.05 (for the null hypothesis that the mean is 0) are associated with 95 % confidence intervals for the sample mean not overlapping zero, and p-vales above 0.05 are associated with 95 % confidence intervals that overlap zero ? Will this always be the case for arbitrary statistical decision scenarios, and why ? (2 points)
 	
-3. 	a. The Poisson distribution was first applied to the distribution of deaths from horse-kicks in the Prussian army. Explain why (and possibly also why not) it might be considered a good model for this scenario (2 points)
+3. 	a. One of the first applications of the Poisson distribution was to model the distribution of deaths from horse-kicks in the Prussian army. Explain why (and possibly also why not) it might be considered a good model for this scenario (2 points)
 	b. Read the abstract of this paper - https://www.biorxiv.org/content/10.1101/231027v3. Withot worrying about its scientific merits, and treating it as a valid statistical claim, explain what the abstract says (feel free to read up on the Erlang distribution). Simulate the distribution and examine its dependence on the different parameters (how many are there ?) (2 points)
 
 4. Complete the in-class assignment from class 4 (8 points)
