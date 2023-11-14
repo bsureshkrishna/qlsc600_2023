@@ -1,5 +1,7 @@
 1. signal.csv in the github folder contains an example of an EKG/ECG signal. A cardiologist has had their team measure a lot of precious data from patients with a rare disease over the last 30 years that could help test your model. However, unfortunately, the signals they have collected look like the ones in newfile.csv (in the github folder) -- i.e very noisy. What do you do now ? Explain your strategy, implement it, and comment on the signals in the two files. (4 points)
 
+ps. The signal is sampled at 360 Hz, lasts for 2 minutes, and has 43200 samples (120 s * 360 Hz).
+
 Code that could help you is available in ecg_assignment.ipynb in the github folder.
 
 2. 	a. A hotel is hosting two conferences at the same time - one of ace used-car salespeople and one of Canadian librarians. Survey data indicates that over 90 % of salespeople are extroverts who dress boldly, while over 90 % of librarians are introverts who dress in an under-stated fashion. You go into the hotel and find that you are sharing the elevator with someone who looks introverted and is dressed very sedately. How confident will/can/should you be in starting a conversation with them assuming they are a librarian ? Why ? (2 points; naturally, only statistical reasons considered)
