@@ -1,12 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.signal import butter, filtfilt
+from scipy.signal import butter, filtfilt, convolve
 from scipy.stats import gamma
 import math
+import sklearn
 
 def plot_signal_spectrum(signal, fs, plotornot = 1):
     # Compute the FFT
-    fft_result = np.fft.fft(signal-np.mean(signal))
+    fft_result = np.fft.fft(signal)
 
     # Compute the frequency bins
     freqs = np.fft.fftfreq(len(signal), d=1/fs)
@@ -16,6 +17,9 @@ def plot_signal_spectrum(signal, fs, plotornot = 1):
 
     if(plotornot==1):
         # Plotting
+        sorted_indices = np.argsort(freqs)
+        magnitude=magnitude[sorted_indices]
+        freqs=freqs[sorted_indices]
         plt.plot(freqs, magnitude)
         plt.xlabel("Frequency (Hz)")
         plt.ylabel("Magnitude")
@@ -52,3 +56,9 @@ def generate_gammatone(timeax,f=440,b=50,n=4,a=1,phi=0):
     cospart=np.cos(2.0*np.pi*f*timeax) # a hack normalization to make convolution output "preserve" amplitude
     gammatone_impresp=cospart*gammapart #impulse response of gammatone filter
     return gammatone_impresp
+
+def generate_samtone(t,spl,frequency, phasevalue=0, amfrequency=10):
+    #supply amplitdue in sound pressure level (decibels), frequency in hz
+    amplitude = amplitude_from_spl(spl) #amplitude in micropascals, since reference of 0dB = 20 micropascals
+    signal = amplitude*(1+np.sin(2*np.pi*amfrequency*t-(np.pi)/2))*np.sin(2.0*np.pi*frequency*t+phasevalue) #a simple sine-wave to use as signal
+    return signal
